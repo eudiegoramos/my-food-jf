@@ -22,7 +22,7 @@ export default function MapScreen() {
       <body>
         <div id="map"></div>
         <script>
-          // Inicializa o mapa centralizado no restaurante
+
           var map = L.map('map').setView([${RESTAURANTE_LAT}, ${RESTAURANTE_LON}], 16);
           
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,7 +30,6 @@ export default function MapScreen() {
             attribution: '© OpenStreetMap'
           }).addTo(map);
 
-          // Ícone Vermelho Personalizado
           var restIcon = L.icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -40,7 +39,6 @@ export default function MapScreen() {
             shadowSize: [41, 41]
           });
 
-          // Adiciona o marcador do MyFoodJF
           L.marker([${RESTAURANTE_LAT}, ${RESTAURANTE_LON}], {icon: restIcon})
             .addTo(map)
             .bindPopup("<b>MyFoodJF</b><br>Rua Principal, Juiz de Fora<br>Aberto para retirada!")
@@ -52,10 +50,8 @@ export default function MapScreen() {
 
   return (
     <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom']}>
-      {/* A cor de fundo desta View foi alterada nos estilos abaixo */}
       <View style={styles.header}>
         <View style={styles.titleContainer}>
-            {/* A cor destes textos foi alterada para branco nos estilos abaixo */}
             <Text style={styles.titleText}>Venha nos visitar!</Text>
             <Text style={styles.subtitleText}>Juiz de Fora - MG</Text>
         </View>

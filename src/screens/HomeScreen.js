@@ -133,7 +133,6 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
 
-  // --- ESTILOS DO CARD ---
   card: {
     backgroundColor: '#FFF',
     borderRadius: 12,
